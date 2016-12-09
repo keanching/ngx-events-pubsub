@@ -1,0 +1,27 @@
+<div style="min-height:250px">
+  This is the search criteria passed from top component to app component to middle component: {{searchCriteria}}
+  <br><br>
+
+  <div *ngIf="isLoading">Searching...</div>
+
+  <div *ngIf="!isLoading">
+    Search Results<br><br>
+
+    <div *ngIf="searchResults == null || searchResults.length == 0">No customers found</div>
+
+    <table class="table table-striped" *ngIf="searchResults != null && searchResults.length > 0" style="width:400px">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>First Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let result of searchResults">
+          <td>{{result.id}}</td>
+          <td><a href="javascript:void(0)" (click)="onClick(result)" style="text-decoration:none">{{result.firstName}}</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

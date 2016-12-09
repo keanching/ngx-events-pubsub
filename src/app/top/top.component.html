@@ -1,0 +1,7 @@
+<form style="width:300px">
+  <div class="form-group">
+    <label for="searchInput">Search Customers</label>
+    <input #searchString type="text" class="form-control" id="searchInput" placeholder="Enter Search Criteria">
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="searchCustomers(searchString.value)">Search</button>
+</form>
