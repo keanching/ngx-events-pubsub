@@ -1,5 +1,5 @@
 {
-  "name": "ng2-events",
+  "name": "ng2-events-pubsub",
   "version": "0.0.0",
   "license": "MIT",
   "angular-cli": {},

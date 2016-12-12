@@ -1,7 +1,7 @@
 {
   "project": {
     "version": "1.0.0-beta.21",
-    "name": "ng2-events"
+    "name": "ng2-events-pubsub"
   },
   "apps": [
     {

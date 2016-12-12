@@ -1,4 +1,4 @@
-# ng2-events
+# ng2-events-pubsub
 Demonstrates how to use a publish/subscribe service in angular 2.  
 This is useful in scenarios where you need sibling component to component communication.
 
