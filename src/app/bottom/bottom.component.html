@@ -1,7 +1,7 @@
 <div *ngIf="isLoading">Getting details...</div>
 
 <div *ngIf="!isLoading">
-  <dl class="dl-horizontal" *ngIf="fullDetail != null">
+  <dl class="dl-horizontal" *ngIf="fullDetail">
     <dt>ID</dt>
     <dd>{{fullDetail.id}}</dd>
     <dt>First Name</dt>

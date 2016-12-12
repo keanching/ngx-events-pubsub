@@ -13,7 +13,7 @@ export class BottomComponent implements OnInit, OnDestroy {
   isLoading: boolean = false;
   detailsSub: Subscription;
   searchSub: Subscription;
-  fullDetail: any = null;
+  fullDetail: any;
 
   constructor(private eventService: EventService, private customerService: CustomerService) {
   }
@@ -21,7 +21,7 @@ export class BottomComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.detailsSub = this.eventService.getObservable(MyEvent.ON_DETAILS_CLICKED).subscribe(
       detailSummary => {
-        console.group('BottomComponent: Got detail summary from subscription');
+        console.group('BottomComponent: Received ON_DETAILS_CLICKED event');
         console.log('Detail summary', detailSummary);
         console.groupEnd();
         this.getDetails(detailSummary.id);
@@ -30,16 +30,18 @@ export class BottomComponent implements OnInit, OnDestroy {
 
     this.searchSub = this.eventService.getObservable(MyEvent.ON_SUBMIT_SEARCH).subscribe(
       searchCriteria => {
-        this.fullDetail = null;
+        console.log('BottomComponent: Received ON_SUBMIT_SEARCH event');
+        this.fullDetail = undefined;
       }
     );
 
     console.log('BottomComponent: Subscribed to ' + MyEvent[MyEvent.ON_DETAILS_CLICKED]);
+    console.log('BottomComponent: Subscribed to ' + MyEvent[MyEvent.ON_SUBMIT_SEARCH]);
   }
 
   getDetails(id: string) {
     this.isLoading = true;
-    this.fullDetail = null;
+    this.fullDetail = undefined;
 
     console.log('BottomComponent: Getting full details...');
     this.customerService.getDetails(id).subscribe(

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, Input } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs/Subscription';
 
 import { CustomerService } from '../customer.service';
@@ -12,9 +12,7 @@ import { EventService, MyEvent } from '../event.service';
 export class MiddleComponent implements OnInit, OnDestroy {
   isLoading: boolean = false;
   subscription: Subscription;
-  searchResults: any[] = null;
-  @Input()
-  searchCriteria: string;
+  searchResults: any[];
 
   constructor(private eventService: EventService, private customerService: CustomerService) {
   }
@@ -22,7 +20,7 @@ export class MiddleComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.subscription = this.eventService.getObservable(MyEvent.ON_SUBMIT_SEARCH).subscribe(
       searchCriteria => {
-        console.group('MiddleComponent: Got search criteria from subscription');
+        console.group('MiddleComponent: Received ON_SUBMIT_SEARCH event');
         console.log('Search criteria: ' + searchCriteria);
         console.groupEnd();
         this.searchCustomers(searchCriteria);
@@ -34,7 +32,7 @@ export class MiddleComponent implements OnInit, OnDestroy {
 
   searchCustomers(searchCriteria: string) {
     this.isLoading = true;
-    this.searchResults = null;
+    this.searchResults = undefined;
 
     console.log('MiddleComponent: Searching...');
     this.customerService.searchCustomers(searchCriteria).subscribe(

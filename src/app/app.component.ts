@@ -6,10 +6,4 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  appCompSearchCriteria: string;
-
-  onSearchClicked(data: string) {
-    console.log('searchClick event: ' + data);
-    this.appCompSearchCriteria = data;
-  }
 }
