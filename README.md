@@ -1,5 +1,5 @@
 # ng2-events-pubsub
-Demonstrates how to use a publish/subscribe service in angular 2.  
+Demonstrates how to use a publish/subscribe service in angular.  
 This is useful in scenarios where you need sibling component to component communication.
 
 ## Install
