@@ -12,7 +12,8 @@ export class CustomerService {
   searchCustomers(someSearchValue: string): Observable<any[]> {
     return this.http.get('api/customers')
       .map((response) => {
-        let retList = response.json().data.map(element => {
+        console.log(response);
+        const retList = response.json().data.map(element => {
           return {
             id: element.id,
             firstName: element.firstName

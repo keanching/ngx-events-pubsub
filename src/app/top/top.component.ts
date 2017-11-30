@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 
-import { CustomerService } from '../customer.service';
 import { EventService, MyEvent } from '../event.service';
 
 @Component({
@@ -9,7 +8,7 @@ import { EventService, MyEvent } from '../event.service';
   styleUrls: ['./top.component.css']
 })
 export class TopComponent implements OnInit {
-  constructor(private eventService: EventService, private customerService: CustomerService) {
+  constructor(private eventService: EventService) {
   }
 
   ngOnInit() {

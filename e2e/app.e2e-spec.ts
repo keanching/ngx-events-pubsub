@@ -1,10 +1,10 @@
-import { Ng2EventsPubsubPage } from './app.po';
+import { NgxEventsPubsubPage } from './app.po';
 
-describe('ng2-events-pubsub App', () => {
-  let page: Ng2EventsPubsubPage;
+describe('ngx-events-pubsub App', () => {
+  let page: NgxEventsPubsubPage;
 
   beforeEach(() => {
-    page = new Ng2EventsPubsubPage();
+    page = new NgxEventsPubsubPage();
   });
 
   it('should display welcome message', () => {

@@ -10,7 +10,7 @@ import { EventService, MyEvent } from '../event.service';
   styleUrls: ['./middle.component.css']
 })
 export class MiddleComponent implements OnInit, OnDestroy {
-  isLoading: boolean = false;
+  isLoading = false;
   subscription: Subscription;
   searchResults: any[];
 

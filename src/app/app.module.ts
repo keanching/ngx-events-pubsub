@@ -25,7 +25,7 @@ import { CustomerService } from './customer.service';
     BrowserModule,
     FormsModule,
     HttpModule,
-    InMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 750 })
+    InMemoryWebApiModule.forRoot(InMemoryDataService, { delay: 750, dataEncapsulation: true })
   ],
   providers: [EventService, CustomerService],
   bootstrap: [AppComponent]

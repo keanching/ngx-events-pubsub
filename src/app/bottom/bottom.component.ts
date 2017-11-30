@@ -10,7 +10,7 @@ import { EventService, MyEvent } from '../event.service';
   styleUrls: ['./bottom.component.css']
 })
 export class BottomComponent implements OnInit, OnDestroy {
-  isLoading: boolean = false;
+  isLoading = false;
   detailsSub: Subscription;
   searchSub: Subscription;
   fullDetail: any;
